@@ -1,0 +1,95 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HCMasterPage.master.cs" Inherits="WebApplication3.HCMasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Health Care</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style7 {
+            height: 52px;
+            width: 1220px;
+        }
+        .auto-style11 {
+            text-align: center;
+        }
+        .auto-style12 {
+            text-align: center;
+            width: 1475px;
+        }
+        .auto-style13 {
+            text-align: right;
+        }
+        .auto-style14 {
+            width: 100%;
+            height: 49px;
+        }
+    </style>
+</head>
+<body style="background-image: url('anotherbi.jpg'); background-size:cover;">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:Label ID="LabelTitle" runat="server" Text="HEALTH CARE" Font-Bold="True" Font-Size="Larger"></asp:Label>
+        &nbsp;
+        <div>
+
+            
+                    
+                        <table class="auto-style1">
+                            <tr>
+                                <td class="auto-style12"><strong>Welcome
+                                    <asp:Label ID="lblUser" runat="server" Text="Label"></asp:Label>
+                                    </strong>
+                                </td>
+                                <td class="auto-style13">
+                                    <asp:LinkButton ID="LinkButtonLogout" runat="server" OnClick="LinkButtonLogout_Click">Logout</asp:LinkButton>
+                                </td>
+                            </tr>
+                        </table>
+
+            
+                    
+                        <table class="auto-style14">
+                            <tr>
+                                <td class="auto-style7">
+                                    <asp:Menu ID="Menu1" runat="server" BackColor="Black" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#94CBEA" Orientation="Horizontal" StaticSubMenuIndent="10px">
+                                        <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                                        <DynamicMenuStyle BackColor="#E3EAEB" />
+                                        <DynamicSelectedStyle BackColor="#1C5E55" />
+                                        <Items>
+                                            <asp:MenuItem Text="Home" Value="Home"></asp:MenuItem>
+                                            <asp:MenuItem NavigateUrl="~/Dept.aspx" Text="Department" Value="Department">
+                                                <asp:MenuItem NavigateUrl="~/DoctorMappingDept.aspx" Text="Doctor Registration" Value="Doctor Registration"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                            <asp:MenuItem Text="Appointment" Value="Appointment" NavigateUrl="~/Consultancy.aspx"></asp:MenuItem>
+                                            <asp:MenuItem Text="Admin" Value="Admin">
+                                                <asp:MenuItem NavigateUrl="~/TimeSlotUpload.aspx" Text="ConsultancyTime" Value="ConsultancyTime"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                            <asp:MenuItem Text="Doctor" Value="Doctor">
+                                                <asp:MenuItem NavigateUrl="~/DoctorSchedule.aspx" Text="Consultancy_Schedule" Value="Consultancy_Schedule"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="~/LeaveApply.aspx" Text="ApplyLeave" Value="ApplyLeave"></asp:MenuItem>
+                                            </asp:MenuItem>
+                                        </Items>
+                                        <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                                        <StaticMenuItemStyle Font-Size="Medium" HorizontalPadding="5px" VerticalPadding="2px" />
+                                        <StaticSelectedStyle BackColor="#1C5E55" />
+                                    </asp:Menu>
+                                </td>
+                            </tr>
+                        </table>
+                    
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="auto-style11" style="text-align:center;"><strong>All Rights Reserved to Tata steel</strong></div>
+    </form>
+</body>
+</html>

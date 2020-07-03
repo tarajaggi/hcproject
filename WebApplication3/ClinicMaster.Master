@@ -1,0 +1,80 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ClinicMaster.master.cs" Inherits="WebApplication3.ClinicMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>HealthCare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style type="text/css">
+        body{
+            background-color:lightgray;
+        }
+        .footer {
+           position: fixed;
+           left: 0;
+           bottom: 0;
+           width: 100%;
+           background-color: black;
+           color: white;
+           text-align: center;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div>
+
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Health Care <span class="glyphicon glyphicon-plus"></a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="Home.aspx">Home</a></li>
+                        <li><a href="Consultancy.aspx">About Us</a></li>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Department<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="Dept.aspx">Hospital Department</a></li>
+                                <li><a href="DoctorMappingDept.aspx">Doctor List</a></li>
+                               
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Schedule<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="TimeSlotUpload.aspx">Hospital Schedule</a></li>
+                                <li><a href="DoctorSchedule.aspx">Doctor Schedule</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li><a href="Consultancy.aspx">Consultation</a></li>
+                        
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><span class="glyphicon glyphicon-user"> </span>
+                            <asp:Label ID="LabelUser" runat="server" Text="Label" style="color:white; font-size:18px;"></asp:Label>
+                            </li>
+                        <li>
+                            <asp:LinkButton ID="LinkButtonlogout" runat="server" OnClick="LinkButtonlogout_Click" ><span class="glyphicon glyphicon-log-out"></span>Logout</asp:LinkButton></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <div class="footer">
+                <p>&copy All Rights Resevered Tata Steel 2020</p>
+            </div>
+
+        </div>
+    </form>
+</body>
+</html>
